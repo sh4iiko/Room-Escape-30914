@@ -101,6 +101,7 @@ int main()
 void LivingRoom()
 {
 	int num;
+	char pw[100];
 	while (1) {
 		if(!life){
 			system("cls");
@@ -182,7 +183,7 @@ void LivingRoom()
 			printf("1. 노트북을 킨다. 2. 가만히 둔다.\n");
 			num = InputNum(1, 2);
 			if (num == 1) {
-				char pw[100];
+				
 				system("cls");
 				printf("키는 중\n");
 				Sleep(1000);
@@ -262,7 +263,6 @@ void LivingRoom()
 			break;
 		
 		case 8:
-			char pw[100];
 			printf("비밀번호 : \n");
 			scanf("%s", pw);
 			if (!strcmp(pw, doorRaptopPassword)) {
