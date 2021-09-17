@@ -1,3 +1,9 @@
+/*
+ê°œë°œì : ì–‘ìš°ì„±, ì´ê°•ì—°
+ê°œë°œì¼ : 2021.09.17.
+ë¬¸ì˜ : onlay90@gmail.com
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<Windows.h>
@@ -18,15 +24,15 @@ enum Item {
 };
 
 char itemName[30][30] = {
-	"¸®¸ğÄÁ",
-	"¾È¹æ Å°",
-	"ÈùÆ® Á¾ÀÌ",
+	"ë¦¬ëª¨ì»¨",
+	"ì•ˆë°© í‚¤",
+	"íŒíŠ¸ ì¢…ì´",
 	"USB",
-	"µüµüÇÑ »§",
-	"Àû½Å »§",
-	"¹æÀüµÈ ½º¸¶Æ®Æù",
-	"½º¸¶Æ®Æù",
-	"º¸Á¶ ¹èÅÍ¸®",
+	"ë”±ë”±í•œ ë¹µ",
+	"ì ì‹  ë¹µ",
+	"ë°©ì „ëœ ìŠ¤ë§ˆíŠ¸í°",
+	"ìŠ¤ë§ˆíŠ¸í°",
+	"ë³´ì¡° ë°°í„°ë¦¬",
 };
 
 void LivingRoom();
@@ -81,11 +87,11 @@ int main()
 	}
 	doorPhonePassword[i] = '\0';
 
-	printf("¹Û¿¡ ³ª°¡·Á Çß´Âµ¥ ¹®ÀÌ ´İÇôÀÖ´Ù.\n");
+	printf("ë°–ì— ë‚˜ê°€ë ¤ í–ˆëŠ”ë° ë¬¸ì´ ë‹«í˜€ìˆë‹¤.\n");
 	Sleep(1000);
-	printf("¿Ö ¿­¸®Áö ¾Ê´Â°É±î ? ÀÌ´ë·Î °¤ÇôÀÖÀÖ¼ø ¾ø´Ù.\n");
+	printf("ì™œ ì—´ë¦¬ì§€ ì•ŠëŠ”ê±¸ê¹Œ ? ì´ëŒ€ë¡œ ê°‡í˜€ìˆìˆìˆœ ì—†ë‹¤.\n");
 	Sleep(1000);
-	printf("»¡¸® Å»ÃâÇÏÀÚ.");
+	printf("ë¹¨ë¦¬ íƒˆì¶œí•˜ì.");
 	Sleep(1000);
 	system("cls");
 
@@ -98,10 +104,10 @@ void LivingRoom()
 	while (1) {
 		if(!life){
 			system("cls");
-			printf("Ã¼·Â ¾ø¾î¼­ Á×À½");
+			printf("ì²´ë ¥ ì—†ì–´ì„œ ì£½ìŒ");
 			return; 
 		} 
-		printf("³²Àº Ã¼·Â : %d \n1. ¼ÒÆÄ 2. TV 3. ³ÃÀå°í \n4. Á¤¼ö±â 5. ³ëÆ®ºÏ 6.¾È¹æÀ¸·Î ÀÌµ¿ \n7. ÀÎº¥Åä¸® 8. Å»Ãâ±¸\n",life);
+		printf("ë‚¨ì€ ì²´ë ¥ : %d \n1. ì†ŒíŒŒ 2. TV 3. ëƒ‰ì¥ê³  \n4. ì •ìˆ˜ê¸° 5. ë…¸íŠ¸ë¶ 6.ì•ˆë°©ìœ¼ë¡œ ì´ë™ \n7. ì¸ë²¤í† ë¦¬ 8. íƒˆì¶œêµ¬\n",life);
 		
 		num = InputNum(1, 8);
 		system("cls");
@@ -111,119 +117,119 @@ void LivingRoom()
 		{
 		case 1:
 			if (!LivingRoom_sopa) {
-				printf("1. ¼ÒÆÄ À§¸¦ µÚÁø´Ù.\n");
-				printf("2. °¡¸¸È÷ µĞ´Ù.\n");
+				printf("1. ì†ŒíŒŒ ìœ„ë¥¼ ë’¤ì§„ë‹¤.\n");
+				printf("2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 
 				num = InputNum(1, 2);
 				if (num == 1) {
-					printf("¸®¸ğÄÁ È¹µæ\n");
+					printf("ë¦¬ëª¨ì»¨ íšë“\n");
 					inventory[remoteControl] = 1;
 					LivingRoom_sopa = 1;
 				}
 				else {
-					printf("¾Æ¹«ÀÏµµ ¾ø´Ù.\n");
+					printf("ì•„ë¬´ì¼ë„ ì—†ë‹¤.\n");
 				}
 			}
 			else {
-				printf("´õ ÀÌ»ó Ã£À»°Ô ¾ø´Ù\n");				
+				printf("ë” ì´ìƒ ì°¾ì„ê²Œ ì—†ë‹¤\n");				
 			}
 			break;
 
 		case 3:
 			if(!LivingRoom_refrigerator)
 			{
-				printf("¸Ô´Ù ³²Àº À½½ÄÀÌ ÀÖ´Ù. Ã¬±æ±î\n");
-				printf("1. Ã¬±ä´Ù 2. ±×³É µÎ°í °£´Ù.\n");
+				printf("ë¨¹ë‹¤ ë‚¨ì€ ìŒì‹ì´ ìˆë‹¤. ì±™ê¸¸ê¹Œ\n");
+				printf("1. ì±™ê¸´ë‹¤ 2. ê·¸ëƒ¥ ë‘ê³  ê°„ë‹¤.\n");
 				num = InputNum(1,2);
 				if(num==1){
-					printf("µüµüÇÑ »§ È¹µæ\n");
+					printf("ë”±ë”±í•œ ë¹µ íšë“\n");
 					inventory[hardBread]=1;
 					LivingRoom_refrigerator=1;
 				}
 				else{
-					printf("°ÇµéÁö ¸»ÀÚ\n");
+					printf("ê±´ë“¤ì§€ ë§ì\n");
 				}
 			}
 			else{
-				printf("´õ ÀÌ»ó Ã£À»°Ô ¾ø´Ù\n");
+				printf("ë” ì´ìƒ ì°¾ì„ê²Œ ì—†ë‹¤\n");
 			}
 			break;
 		
 		case 4: 
-			printf("Á¤¼ö±â´Ù.\n");
-			printf("1. ¹°À» Æ°´Ù. 2. °¡¸¸È÷ µĞ´Ù.\n");
+			printf("ì •ìˆ˜ê¸°ë‹¤.\n");
+			printf("1. ë¬¼ì„ íŠ¼ë‹¤. 2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 			num = InputNum(1,2);
 			if(num==1){
 				if(inventory[hardBread]){
-					printf("1. »§À» ¹°¿¡ Àû½Å´Ù. 2.±×³É µĞ´Ù\n");
+					printf("1. ë¹µì„ ë¬¼ì— ì ì‹ ë‹¤. 2.ê·¸ëƒ¥ ë‘”ë‹¤\n");
 					num = InputNum(1,2);
 					if(num==1){
-						printf("»§ÀÌ Á¥¾ú´Ù. ´õ ¹èºÎ¸£°Ô ¸ÔÀ» ¼ö ÀÖ°ÚÁö\n");
+						printf("ë¹µì´ ì –ì—ˆë‹¤. ë” ë°°ë¶€ë¥´ê²Œ ë¨¹ì„ ìˆ˜ ìˆê² ì§€\n");
 						inventory[hardBread]=0;
 						inventory[softBread]=1;
 					}
 				}
 				else{
-					printf("¹°ÀÌ ³ª¿Â´Ù.\n");
+					printf("ë¬¼ì´ ë‚˜ì˜¨ë‹¤.\n");
 				}
 			}
 			else{
-				printf("°ÇµéÁö ¸»ÀÚ\n");
+				printf("ê±´ë“¤ì§€ ë§ì\n");
 			}
 			break;
 		case 5:
-			printf("³ëÆ®ºÏÀÌ ÀÖ´Ù.\n");
-			printf("1. ³ëÆ®ºÏÀ» Å²´Ù. 2. °¡¸¸È÷ µĞ´Ù.\n");
+			printf("ë…¸íŠ¸ë¶ì´ ìˆë‹¤.\n");
+			printf("1. ë…¸íŠ¸ë¶ì„ í‚¨ë‹¤. 2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 			num = InputNum(1, 2);
 			if (num == 1) {
 				char pw[100];
 				system("cls");
-				printf("Å°´Â Áß\n");
+				printf("í‚¤ëŠ” ì¤‘\n");
 				Sleep(1000);
-				printf("ÄÑÁü\n");
-				printf("ºñ¹Ğ¹øÈ£°¡ °É·ÁÀÖ´Ù. ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏÀÚ.\n");
+				printf("ì¼œì§\n");
+				printf("ë¹„ë°€ë²ˆí˜¸ê°€ ê±¸ë ¤ìˆë‹¤. ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì.\n");
 				scanf("%s", pw);
 				if (!strcmp(pw, raptopPassword)) {
-					printf("ºñ¹Ğ¹øÈ£°¡ ¸Â¾Ò´Ù.\n");
+					printf("ë¹„ë°€ë²ˆí˜¸ê°€ ë§ì•˜ë‹¤.\n");
 					if (inventory[USB]) {
-						printf("USB°¡ ÀÖ¾úÁö, ²È¾Æº¼±î\n");
-						printf("1. ²È´Â´Ù 2. ±×³É ²ö´Ù.\n");
+						printf("USBê°€ ìˆì—ˆì§€, ê½‚ì•„ë³¼ê¹Œ\n");
+						printf("1. ê½‚ëŠ”ë‹¤ 2. ê·¸ëƒ¥ ëˆë‹¤.\n");
 						num = InputNum(1, 2);
 						if (num == 1) {
-							printf("ÀÌ»óÇÑ ¹øÈ£°¡ ½áÀÖ´Â ¸Ş¸ğÀåÀ» Ã£¾Ò´Ù.\n");
+							printf("ì´ìƒí•œ ë²ˆí˜¸ê°€ ì¨ìˆëŠ” ë©”ëª¨ì¥ì„ ì°¾ì•˜ë‹¤.\n");
 							printf("%s\n", doorRaptopPassword);
 							Sleep(3000);
 						}
 					}
 					else {
-						printf("¾Æ¹« ÀÚ·á°¡ ¾ø´Ù.\n");
+						printf("ì•„ë¬´ ìë£Œê°€ ì—†ë‹¤.\n");
 					}
 				}
 
 				else {
-					printf("ºñ¹Ğ¹øÈ£°¡ Æ²·È´Ù.\n");
+					printf("ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ë‹¤.\n");
 
 				}
 			}
 			else {
-				printf("±×³É °¡¸¸È÷ µÎÀÚ\n");
+				printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì\n");
 			}
 			break;
 
 		case 6:
 			if (!InnerRoom_open) {
-				printf("¹®ÀÌ Àá°ÜÀÖ´Â°Å °°´Ù.\n");
-				printf("1. ¹® ¿­±â 2. ¹® ºÎ¼ö±â 0. °¡¸¸È÷ µĞ´Ù\n");
+				printf("ë¬¸ì´ ì ê²¨ìˆëŠ”ê±° ê°™ë‹¤.\n");
+				printf("1. ë¬¸ ì—´ê¸° 2. ë¬¸ ë¶€ìˆ˜ê¸° 0. ê°€ë§Œíˆ ë‘”ë‹¤\n");
 				num = InputNum(0, 2);
 				if (!num) {
 					break;
 				}
 				else if (num == 1) {
 					if (!inventory[innerRoomKey]) {
-						printf("¿­¼è°¡ ¾ø¾î µé¾î°¥ ¼ö ¾ø´Ù. ¿­¼è¸¦ Ã£¾Æº¸ÀÚ\n");
+						printf("ì—´ì‡ ê°€ ì—†ì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ë‹¤. ì—´ì‡ ë¥¼ ì°¾ì•„ë³´ì\n");
 					}
 					else {
-						printf("¹®ÀÌ ¿­·È´Ù. µé¾î°¡º¸ÀÚ\n");
+						printf("ë¬¸ì´ ì—´ë ¸ë‹¤. ë“¤ì–´ê°€ë³´ì\n");
 						InnerRoom_open = 1;
 						Sleep(500);
 						system("cls");
@@ -231,15 +237,15 @@ void LivingRoom()
 					}
 				}
 				else {
-					printf("Äç...\n");
+					printf("ì¾…...\n");
 					Sleep(1000);
-					printf("´õ ÇÏ¸é ºÎ¼­Áú°Í °°Àºµ¥..\n");
-					printf("Ã¼·ÂÀÌ 5 ±ğ¿´´Ù.\n");
+					printf("ë” í•˜ë©´ ë¶€ì„œì§ˆê²ƒ ê°™ì€ë°..\n");
+					printf("ì²´ë ¥ì´ 5 ê¹ì˜€ë‹¤.\n");
 					Sleep(1000);
 					life-=5;
 					InnerRoom_doorLife--;
 					if(!InnerRoom_doorLife){
-						printf("¹®ÀÌ ºÎ½¤Á³´Ù. µé¾î°¡º¸ÀÚ\n");
+						printf("ë¬¸ì´ ë¶€ìˆ´ì¡Œë‹¤. ë“¤ì–´ê°€ë³´ì\n");
 						InnerRoom_open=1;
 						Sleep(1000);
 						system("cls");
@@ -257,16 +263,16 @@ void LivingRoom()
 		
 		case 8:
 			char pw[100];
-			printf("ºñ¹Ğ¹øÈ£ : \n");
+			printf("ë¹„ë°€ë²ˆí˜¸ : \n");
 			scanf("%s", pw);
 			if (!strcmp(pw, doorRaptopPassword)) {
 				system("cls");
-				printf("Å»Ãâ ¼º°ø\n");
+				printf("íƒˆì¶œ ì„±ê³µ\n");
 				Sleep(1000);
 				return;
 			}
 			else {
-				printf("Æ²·È´Ù ´Ù½Ã Ã£¾Æº¸ÀÚ\n");
+				printf("í‹€ë ¸ë‹¤ ë‹¤ì‹œ ì°¾ì•„ë³´ì\n");
 			}
 			break;
 
@@ -286,10 +292,10 @@ void InnerRoom() {
 		
 		if(!life){
 			system("cls");
-			printf("Ã¼·Â ¾ø¾î¼­ Á×À½");
+			printf("ì²´ë ¥ ì—†ì–´ì„œ ì£½ìŒ");
 			return; 
 		} 
-		printf("³²Àº Ã¼·Â : %d\n1. Ã¥ 2. Ä§´ë 3. ¿ÊÀå \n4. ÀÎº¥Åä¸® 0. ³ª°¡±â\n",life);
+		printf("ë‚¨ì€ ì²´ë ¥ : %d\n1. ì±… 2. ì¹¨ëŒ€ 3. ì˜·ì¥ \n4. ì¸ë²¤í† ë¦¬ 0. ë‚˜ê°€ê¸°\n",life);
 
 		num = InputNum(0, 4);
 		life--;
@@ -297,91 +303,91 @@ void InnerRoom() {
 		switch (num)
 		{
 		case 0:
-			printf("¾È¹æÀ» ³ª¿Ô´Ù.\n");
+			printf("ì•ˆë°©ì„ ë‚˜ì™”ë‹¤.\n");
 			return;
 		case 1:
-			printf("Ã¥ÀÌ ÀÖ´Ù.\n1. Ã¥À» ¿¬´Ù. 2.°¡¸¸È÷ µĞ´Ù.\n");
+			printf("ì±…ì´ ìˆë‹¤.\n1. ì±…ì„ ì—°ë‹¤. 2.ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 			num = InputNum(1, 2);
 			if (num == 1) {
-				printf("Ã¥¿¡¼­ ¼ıÀÚ°¡ ÀûÇôÀÖ´Â Á¾ÀÌ¸¦ Ã£¾Ò´Ù. È®ÀÎÇØº¸ÀÚ\n");
+				printf("ì±…ì—ì„œ ìˆ«ìê°€ ì í˜€ìˆëŠ” ì¢…ì´ë¥¼ ì°¾ì•˜ë‹¤. í™•ì¸í•´ë³´ì\n");
 				inventory[bookHintPaper] = 1;
 			}
 			else {
-				printf("±×³É °¡¸¸È÷ µÎÀÚ.\n");
+				printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì.\n");
 			}
 			break;
 		case 2:
-			printf("1. ÀÌºÒ 2. ¸ÅÆ®¸®½º 3. º£°Ô 4. °¡¸¸È÷ µĞ´Ù.\n");
+			printf("1. ì´ë¶ˆ 2. ë§¤íŠ¸ë¦¬ìŠ¤ 3. ë² ê²Œ 4. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 			num = InputNum(1, 4);
 			if (num == 1) {
-				printf("1. ÀÌºÒÀ» µéÃá´Ù. 2. °¡¸¸È÷ µĞ´Ù.\n");
+				printf("1. ì´ë¶ˆì„ ë“¤ì¶˜ë‹¤. 2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 				num = InputNum(1, 2);
 				if (num == 1) {
-					printf("¼ØÅĞ¸¸ ³¯¸°´Ù.\n");
+					printf("ì†œí„¸ë§Œ ë‚ ë¦°ë‹¤.\n");
 				}
 				else {
-					printf("±×³É °¡¸¸È÷ µÎÀÚ\n");
+					printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì\n");
 				}
 			}
 			else if (num == 2) {
-				printf("1. ¸ÅÆ®¸®½º¸¦ µéÃá´Ù. 2. °¡¸¸È÷ µĞ´Ù.\n");
+				printf("1. ë§¤íŠ¸ë¦¬ìŠ¤ë¥¼ ë“¤ì¶˜ë‹¤. 2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 				num = InputNum(1, 2);
 				if (num == 1) {
-					printf("¼û°ÜÁ® ÀÖ´ø USB¸¦ Ã£¾Ò´Ù.\n");
+					printf("ìˆ¨ê²¨ì ¸ ìˆë˜ USBë¥¼ ì°¾ì•˜ë‹¤.\n");
 					inventory[USB] = 1;
 				}
 				else {
-					printf("±×³É °¡¸¸È÷ µÎÀÚ\n");
+					printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì\n");
 				}
 			}
 			else if (num == 3) {
 				if(!InnerRoom_pillow){
 				
-					printf("1. º£°Ô¸¦ µéÃá´Ù. 2. °¡¸¸È÷ µĞ´Ù.\n");
+					printf("1. ë² ê²Œë¥¼ ë“¤ì¶˜ë‹¤. 2. ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 					num = InputNum(1, 2);
 					if (num == 1) {
-						printf("½º¸¶Æ®Æù È¹µæ.\n");
-						printf("±Ùµ¥ ¹èÅÍ¸®°¡ ¾ø´Ù\n");
+						printf("ìŠ¤ë§ˆíŠ¸í° íšë“.\n");
+						printf("ê·¼ë° ë°°í„°ë¦¬ê°€ ì—†ë‹¤\n");
 						inventory[dischargedPhone]=1; 
 						InnerRoom_pillow=1;
 					}
 					else {
-						printf("±×³É °¡¸¸È÷ µÎÀÚ\n");
+						printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì\n");
 					}
 				}
 				else{
-					printf("´õ ÀÌ»ó Ã£À»°Ô ¾ø´Ù\n");
+					printf("ë” ì´ìƒ ì°¾ì„ê²Œ ì—†ë‹¤\n");
 				}
 			}
 			break;
 		
 		case 3:
-			printf("1. ÀÚÄÏ 2. Ã»¹ÙÁö 3. °¡¸¸È÷ µÎ±â\n");
+			printf("1. ìì¼“ 2. ì²­ë°”ì§€ 3. ê°€ë§Œíˆ ë‘ê¸°\n");
 			num = InputNum(1,3);
 			if(num==1){
 				if(!InnerRoom_jacket){
 				
-					printf("1. ÁÖ¸Ó´Ï¸¦ µÚÁø´Ù. 2.°¡¸¸È÷ µĞ´Ù.\n");
+					printf("1. ì£¼ë¨¸ë‹ˆë¥¼ ë’¤ì§„ë‹¤. 2.ê°€ë§Œíˆ ë‘”ë‹¤.\n");
 					num = InputNum(1,2);
 					if(num==1){
-						printf("º¸Á¶ ¹èÅÍ¸®¸¦ Ã£¾Ò´Ù. ¾îµû¾²Áö\n");
+						printf("ë³´ì¡° ë°°í„°ë¦¬ë¥¼ ì°¾ì•˜ë‹¤. ì–´ë”°ì“°ì§€\n");
 						inventory[battery] =1;
 						InnerRoom_jacket=1;
 					}
 					else{
-						printf("°¡¸¸È÷ µÎÀÚ.\n");
+						printf("ê°€ë§Œíˆ ë‘ì.\n");
 					}
 				}
 				else{
-				printf("´õ ÇÒ°Ô ¾ø´Ù.\n");
+				printf("ë” í• ê²Œ ì—†ë‹¤.\n");
 				} 
 				 
 			}
 			else if(num==2){
-				printf("¾Æ¹«°Íµµ ¾ø´Ù.\n");
+				printf("ì•„ë¬´ê²ƒë„ ì—†ë‹¤.\n");
 			}
 			else{
-				printf("°¡¸¸È÷ µÎÀÚ");
+				printf("ê°€ë§Œíˆ ë‘ì");
 			}
 			
 			break;
@@ -411,7 +417,7 @@ int InputNum(int first, int last) {
 		}
 		else 
 		{
-			printf("´Ù½Ã ÀÔ·Â\n");
+			printf("ë‹¤ì‹œ ì…ë ¥\n");
 		}
 		
 	}
@@ -428,7 +434,7 @@ void LookInventory() {
 		}
 	}
 	
-	printf("³²Àº Ã¼·Â : %d\n",life);
+	printf("ë‚¨ì€ ì²´ë ¥ : %d\n",life);
 	
 	for (i = 0; i < count; i++) {
 		printf("%d. %s ", i + 1, itemName[item[i]]);
@@ -436,7 +442,7 @@ void LookInventory() {
 			printf("\n");
 		}
 	}
-	printf("0. ³ª°¡±â\n");
+	printf("0. ë‚˜ê°€ê¸°\n");
 
 	i = InputNum(0, count);
 	if (!i) {
@@ -446,47 +452,47 @@ void LookInventory() {
 		
 		case remoteControl:
 			if(!inventory[innerRoomKey])
-			printf("¸®¸ğÄÁ ¾È¿¡ ¼û¾îÀÖ´Â ¾È¹æ ¿­¼è¸¦ Ã£¾Ò´Ù.\n");
+			printf("ë¦¬ëª¨ì»¨ ì•ˆì— ìˆ¨ì–´ìˆëŠ” ì•ˆë°© ì—´ì‡ ë¥¼ ì°¾ì•˜ë‹¤.\n");
 			inventory[innerRoomKey] = 1;
 			break;
 			
 		case bookHintPaper:
-			printf("¾îµğ¿¡ ¾²´ÂÁö ¸ğ¸£´Â ¼ıÀÚ°¡ ½áÀÖ´Ù.\n");
+			printf("ì–´ë””ì— ì“°ëŠ”ì§€ ëª¨ë¥´ëŠ” ìˆ«ìê°€ ì¨ìˆë‹¤.\n");
 			printf("%s\n", raptopPassword);
 			break;
 		case hardBread:
-			printf("µüµüÇÑ »§ÀÌ ÀÖ´Ù ¸ÔÀ»±î\n");
-			printf("1. ¸Ô´Â´Ù 2. ³³µĞ´Ù\n");
+			printf("ë”±ë”±í•œ ë¹µì´ ìˆë‹¤ ë¨¹ì„ê¹Œ\n");
+			printf("1. ë¨¹ëŠ”ë‹¤ 2. ë‚©ë‘”ë‹¤\n");
 			i = InputNum(1,2);
 			if(i==1){
-				printf("ÂÁÂ¼¤³Â¼¤³Â¼¤³Â¼¤³\n");
+				printf("ì©ì©Œã…ƒì©Œã…ƒì©Œã…ƒì©Œã…ƒ\n");
 				life +=5;
-				printf("Ã¼·ÂÀÌ 5 È¸º¹ µÆ´Ù.\n");
+				printf("ì²´ë ¥ì´ 5 íšŒë³µ ëë‹¤.\n");
 				inventory[hardBread]=0;
 			}
 			else{
-				printf("³ªÁß¿¡ ¸Ô¾î¾ßÁö\n");
+				printf("ë‚˜ì¤‘ì— ë¨¹ì–´ì•¼ì§€\n");
 			}
 			break;
 		case softBread:
-			printf("Àû½Å »§ÀÌ ÀÖ´Ù ¸ÔÀ»±î\n");
-			printf("1. ¸Ô´Â´Ù 2. ³³µĞ´Ù\n");
+			printf("ì ì‹  ë¹µì´ ìˆë‹¤ ë¨¹ì„ê¹Œ\n");
+			printf("1. ë¨¹ëŠ”ë‹¤ 2. ë‚©ë‘”ë‹¤\n");
 			i = InputNum(1,2);
 			if(i==1){
-				printf("ÂÁÂ¼¤³Â¼¤³Â¼¤³Â¼¤³\n");
+				printf("ì©ì©Œã…ƒì©Œã…ƒì©Œã…ƒì©Œã…ƒ\n");
 				life +=10;
-				printf("Ã¼·ÂÀÌ 10 È¸º¹ µÆ´Ù.\n");
+				printf("ì²´ë ¥ì´ 10 íšŒë³µ ëë‹¤.\n");
 				inventory[softBread]=0;
 			}
 			else{
-				printf("³ªÁß¿¡ ¸Ô¾î¾ßÁö\n");
+				printf("ë‚˜ì¤‘ì— ë¨¹ì–´ì•¼ì§€\n");
 			}
 			break;
 			
 			
 		case battery:
-			printf("½º¸¶Æ®ÆùÀ» ÃæÀüÇÒ±î?\n");
-			printf("1. ÇÑ´Ù 2. ¾ÈÇÑ´Ù.\n");
+			printf("ìŠ¤ë§ˆíŠ¸í°ì„ ì¶©ì „í• ê¹Œ?\n");
+			printf("1. í•œë‹¤ 2. ì•ˆí•œë‹¤.\n");
 			i = InputNum(1,2);
 			if(i==1){
 			
@@ -506,47 +512,47 @@ void LookInventory() {
 							
 						}
 					}
-					printf("½º¸¶Æ®Æù ÃæÀüµÊ\n");
-					printf("ÇöÀç ¹èÅÍ¸® : %d%%",phoneLife);
-					printf("³²Àº º¸Á¶ ¹èÅÍ¸® : %d%%",batteryLife);
+					printf("ìŠ¤ë§ˆíŠ¸í° ì¶©ì „ë¨\n");
+					printf("í˜„ì¬ ë°°í„°ë¦¬ : %d%%",phoneLife);
+					printf("ë‚¨ì€ ë³´ì¡° ë°°í„°ë¦¬ : %d%%",batteryLife);
 				}
 				else{
-					printf("º¸Á¶¹èÅÍ¸®¸¦ ´Ù½è´Ù.\n");
+					printf("ë³´ì¡°ë°°í„°ë¦¬ë¥¼ ë‹¤ì¼ë‹¤.\n");
 				}
 			}
 			break;
 			
 		case dischargedPhone:
-			printf("¹èÅÍ¸®°¡ ¾ø´Ù ÃæÀüÀ» ÇÏÀÚ.\n");
+			printf("ë°°í„°ë¦¬ê°€ ì—†ë‹¤ ì¶©ì „ì„ í•˜ì.\n");
 			break;
 			
 			
 			
 		case phone:
-			printf("ÇöÀç ³²Àº ¹èÅÍ¸® : %d%%\n",phoneLife);
-			printf("1. ÀÚ·á¸¦ Ã£¾Æº»´Ù. 2. °ÔÀÓÀ» ÇÑ´Ù 3. ³³µĞ´Ù");
+			printf("í˜„ì¬ ë‚¨ì€ ë°°í„°ë¦¬ : %d%%\n",phoneLife);
+			printf("1. ìë£Œë¥¼ ì°¾ì•„ë³¸ë‹¤. 2. ê²Œì„ì„ í•œë‹¤ 3. ë‚©ë‘”ë‹¤");
 			i = InputNum(1,3);
 			if(i==1&&phoneLife>=20){
-				printf("ÀÌ»óÇÑ ¼ıÀÚ¸¦ Ã£¾Ò´Ù.\n");
+				printf("ì´ìƒí•œ ìˆ«ìë¥¼ ì°¾ì•˜ë‹¤.\n");
 				printf("%s",doorPhonePassword);
 				phoneLife-=20;
 				Sleep(3000);
 			}
 			else if(i==2&&phoneLife>=60){
-				printf("°ÔÀÓÀ» ÇÏ´Ï ±âºĞÀÌ ÁÁ¾ÆÁ³´Ù.\n");
-				printf("Ã¼·ÂÀÌ 5 È¸º¹µÆ´Ù.\n");
+				printf("ê²Œì„ì„ í•˜ë‹ˆ ê¸°ë¶„ì´ ì¢‹ì•„ì¡Œë‹¤.\n");
+				printf("ì²´ë ¥ì´ 5 íšŒë³µëë‹¤.\n");
 				life+=5;
 				phoneLife-=60;
 			}
 			else if(phoneLife>=1) {
 				
-				printf("±×³É °¡¸¸È÷ µÎÀÚ\n");
+				printf("ê·¸ëƒ¥ ê°€ë§Œíˆ ë‘ì\n");
 				phoneLife--;
 				
 			}
 			break;
 		default :
-			printf("Á¶»çÇØ ºÃÁö¸¸ ¾Æ¹«°Íµµ ¾ø´Ù.\n");
+			printf("ì¡°ì‚¬í•´ ë´¤ì§€ë§Œ ì•„ë¬´ê²ƒë„ ì—†ë‹¤.\n");
 			
 	}
 	
